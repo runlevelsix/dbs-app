@@ -1,0 +1,13 @@
+{
+    "name": "DBS-Mobile-App",
+    "version": "0.0.1",
+    "dependencies": {},
+    "devDependencies": {
+        "cordova": "~3.4.0",
+        "grunt": "~0.4.2",
+        "grunt-contrib-jshint": "~0.8.0",
+        "grunt-contrib-watch": "~0.5.3",
+        "grunt-shell": "~0.6.4",
+        "matchdep": "~0.3.0"
+    }
+}
