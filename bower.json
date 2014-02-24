@@ -1,6 +1,11 @@
 {
   "name": "DBS-Mobile-App",
   "version": "0.0.1",
-  "dependencies": {}
+  "main": "www/index.html",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "jquery-mobile-bower": "~1.4.0"
+  }
 }
 
