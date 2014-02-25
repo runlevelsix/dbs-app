@@ -17,33 +17,54 @@
  * under the License.
  */
 var app = {
-    // Application Constructor
-    initialize: function() {
-        this.bindEvents();
-    },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicity call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-    },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+  // Application Constructor
+  initialize: function() {
+      this.bindEvents();
+  },
+  // Bind Event Listeners
+  //
+  // Bind any events that are required on startup. Common events are:
+  // 'load', 'deviceready', 'offline', and 'online'.
+  bindEvents: function() {
+      document.addEventListener('deviceready', this.onDeviceReady, false);
+  },
+  // deviceready Event Handler
+  //
+  // The scope of 'this' is the event. In order to call the 'receivedEvent'
+  // function, we must explicity call 'app.receivedEvent(...);'
+  onDeviceReady: function() {
+      app.receivedEvent('deviceready');
+  },
+  // Update DOM on a Received Event
+  receivedEvent: function(id) {
+      // var parentElement = document.getElementById(id);
+      // var listeningElement = parentElement.querySelector('.listening');
+      // var receivedElement = parentElement.querySelector('.received');
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+      // listeningElement.setAttribute('style', 'display:none;');
+      // receivedElement.setAttribute('style', 'display:block;');
 
-        console.log('Received Event: ' + id);
-    }
+      console.log('Received Event: ' + id);
+      window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, app.onReqFsSuccess, app.onReqFsError);
+  },
+
+  onReqFsSuccess: function onReqFsSuccess(fileSystem) {
+    console.log('onReqFsSuccess: ' + fileSystem.name);
+    // $('#logs').append(fileSystem.name + '<br/>');
+  },
+
+  onReqFsError: function onReqFsError(error) {
+    console.log(error.code);
+    // $('#logs').innerHTML(error.code);
+  },
+
+  onResolveFsSuccess: function onResolveFsSuccess(fileEntry) {
+    // $('#logs').append('File found: ' + fileEntry.name + '<br/>');
+    console.log('onResolveFsSuccess: ' + fileEntry.name);
+    // window.open('file:///sdcard/DBS/SPA - Spanish of Spain/index.html','_blank','location=no');
+  },
+
+  onResolveFsError: function onResolveFsError(error) {
+    // $('#logs').append('There was an error: '+ error.code + '<br/>');
+  }
 };
