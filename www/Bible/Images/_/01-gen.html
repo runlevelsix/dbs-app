@@ -6,11 +6,20 @@
 	<title>Biblia de Arte | Tesoros en Español</title>
 	<link href="../../../css/index-ltr.css" type="text/css" rel="stylesheet">
 	<!--[if lte IE 8]>
-		<link href="../../../css/index-ie.css" type="text/css" rel="stylesheet">
+		<link href="../_/css/index-ie.css" type="text/css" rel="stylesheet">
 	<![endif]-->
 
-	<!-- Image Slider Stylings -->
-	<script src="_/jquery.js"></script>
+	<!-- Owl Carousel Stylings -->
+	<link href="../../../css/vendor/owl/bootstrapTheme.css" rel="stylesheet">
+    <link href="../../../css/vendor/owl/custom.css" rel="stylesheet">
+
+    <!-- Owl Carousel Assets -->
+    <link href="../../../css/vendor/owl/owl.carousel.css" rel="stylesheet">
+    <link href="../../../css/vendor/owl/owl.theme.css" rel="stylesheet">
+
+    <!-- Prettify -->
+    <link href="../../../css/vendor/owl/prettify.css" rel="stylesheet">
+    
 </head>
 <body class="image dark">
 
@@ -23,7 +32,7 @@
 	<a class="index-icon-image" href="#">Biblia de Arte</a>
 	<a class="index-icon-about" href="../../../_/aboutus.html">Sobre Nosotros</a>
 </div>
-
+<!--  
 <div class="index-sidebar-tabs">
 	<a href="#">Génesis</a>
 	<a href="02-exo.html">Éxodo</a>
@@ -36,10 +45,12 @@
 	<a href="09-luk.html">Lucas</a>
 	<a href="10-joh.html">Juan</a>
 	<a href="11-act.html">Hechos</a>
-</ul>
-
 </div>
 
+-->
+
+
+<!--  
 <div class="index-content">
 
 <div id="gen">
@@ -129,5 +140,38 @@
 </div>
 </div>
 </div>
+-->
+
+<div class="container">
+        <div class="row">
+          <div class="span12">
+
+            <div id="owl-demo" class="owl-carousel">
+              <div class="item"><img src="../../../Bible/images/01001-01.1.jpg" alt="Owl Image"></div>
+              <div class="item"><img src="../../../Bible/images/01001-01.2.jpg" alt="Owl Image"></div>
+              <div class="item"><img src="../../../Bible/images/01001-01.3.jpg" alt="Owl Image"></div>
+              <div class="item"><img src="../../../Bible/images/01001-01.4.jpg" alt="Owl Image"></div>
+              <div class="item"><img src="../../../Bible/images/01001-02.1.jpg" alt="Owl Image"></div>
+              <div class="item"><img src="../../../Bible/images/01003-01.1.jpg" alt="Owl Image"></div>
+            </div>
+
+          </div><!-- span12 -->
+        </div><!-- row -->
+
+    <script src="../../../js/vendor/owl/jquery-1.9.1.min.js"></script>
+    <script src="../../../js/vendor/owl/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function() {
+          $("#owl-demo").owlCarousel({
+            autoPlay: 3000,
+            items : 4,
+            itemsDesktop : [1199,3],
+            itemsDesktopSmall : [979,3]
+          });
+
+        });
+    </script>
+</div><!-- container -->
+
 </body>
 </html>
