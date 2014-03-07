@@ -45,7 +45,7 @@ var app = {
       // receivedElement.setAttribute('style', 'display:block;');
 
       console.log('Received Event: ' + id);
-      window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, app.onReqFsSuccess, app.onReqFsError);
+      // window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, app.onReqFsSuccess, app.onReqFsError);
   },
 
   onReqFsSuccess: function onReqFsSuccess(fileSystem) {

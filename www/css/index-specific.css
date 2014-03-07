@@ -1,0 +1,84 @@
+/* Sprite Styles-----------------------------------**
+---------------------------------------------------*/
+
+.item:before		{content:"";background-size:100% 100%;position:relative;display:block;float:left;width:33px;height:50px;margin-right:5px}
+a[class^=v]:before	{content:"";background-size:100% 100%;position:relative;display:block;float:left;width:80px;height:60px;margin-right:5px}
+/* changed paths to ../img from ../images */
+.b001:before {background-image:url(../img/covers/001_easytoread_67x100.jpg)}
+.b002:before {background-image:url(../img/covers/002_DiosHabaHoy_67x100.jpg)}
+.b003:before {background-image:url(../img/covers/003_LaBibliaDeLasAmericas_67x100.jpg)}
+.b004:before {background-image:url(../img/covers/004_NuevaBiblia_67x100.jpg)}
+.b005:before {background-image:url(../img/covers/005_SantaBiblia_67x100.jpg)}
+.b006:before {background-image:url(../img/covers/006_ReinaValeraAntique_67x100.jpg)}
+.b007:before {background-image:url(../img/covers/007_Hebrew_67x100.jpg)}
+.b008:before {background-image:url(../img/covers/008_Greek_67x100.jpg)}
+.b009:before {background-image:url(../img/covers/009_English_67x100.jpg)}
+
+.v1000:before {background-image:url(../img/covers/1000_CCC_Jesus_Film_80x60.jpg);}
+.v1002:before {background-image:url(../img/covers/1001_CCC_Magdelena_80x60.jpg);}
+.v1001:before {background-image:url(../img/covers/1002_CCC_Jesus_Story_80x60.jpg);}
+.v1003:before {background-image:url(../img/covers/1003_Hope_80x60.jpg);}
+.v1004:before {background-image:url(../img/covers/universal_index_GodMan.jpg);}
+
+.v1031:before {background-image: url(../img/covers/1031_JFP_DAY1_Response_of_Grace_80x60.jpg);}
+.v1032:before {background-image: url(../img/covers/1032_JFP_DAY2_Forgiveness_and_Grace_80x60.jpg);}
+.v1033:before {background-image: url(../img/covers/1033_JFP_DAY3_Grace_Versus_Law_80x60.jpg);}
+.v1034:before {background-image: url(../img/covers/1034_JFP_DAY4_Acts_of_Grace_80x60.jpg);}
+.v1035:before {background-image: url(../img/covers/1035_JFP_DAY5_Pursuing_Grace_80x60.jpg);}
+.v1036:before {background-image: url(../img/covers/1036_JFP_DAY6_Evidence_of_Grace_80x60.jpg);}
+.v1037:before {background-image: url(../img/covers/1037_JFP_DAY7_Grace_on_the_Cross_80x60.jpg);}
+
+.b010:before {background-image:url(../img/covers/010_GQ_Gospel_67x100.jpg);}
+.b011:before {background-image:url(../img/covers/011_GQ_Crucial_67x100.jpg);}
+.b012:before {background-image:url(../img/covers/012_GQ_FAQ_67x100.jpg);}
+.b013:before {background-image:url(../img/covers/013_GQ_God_67x100.jpg);}
+.b014:before {background-image:url(../img/covers/014_GQ_Jesus_67x100.jpg);}
+.b015:before {background-image:url(../img/covers/015_GQ_Spirit_67x100.jpg);}
+.b016:before {background-image:url(../img/covers/016_GQ_Salvation_67x100.jpg);}
+.b017:before {background-image:url(../img/covers/017_GQ_Bible_67x100.jpg);}
+.b018:before {background-image:url(../img/covers/018_GQ_Church_67x100.jpg);}
+.b019:before {background-image:url(../img/covers/019_GQ_EndTimes_67x100.jpg);}
+.b020:before {background-image:url(../img/covers/020_GQ_AngelsDemons_67x100.jpg);}
+.b021:before {background-image:url(../img/covers/021_GQ_Humanity_67x100.jpg);}
+.b022:before {background-image:url(../img/covers/022_GQ_Theology_67x100.jpg);}
+.b023:before {background-image:url(../img/covers/023_GQ_Christian_67x100.jpg);}
+.b024:before {background-image:url(../img/covers/024_GQ_Prayer_67x100.jpg);}
+.b025:before {background-image:url(../img/covers/025_GQ_Sin_67x100.jpg);}
+.b026:before {background-image:url(../img/covers/026_GQ_Eternity_67x100.jpg);}
+.b027:before {background-image:url(../img/covers/027_GQ_Marriage_67x100.jpg);}
+.b028:before {background-image:url(../img/covers/028_GQ_Relationships_67x100.jpg);}
+.b029:before {background-image:url(../img/covers/029_GQ_Family_67x100.jpg);}
+.b030:before {background-image:url(../img/covers/030_GQ_Creation_67x100.jpg);}
+.b031:before {background-image:url(../img/covers/031_GQ_Cults_67x100.jpg);}
+.b032:before {background-image:url(../img/covers/032_GQ_FalseDoctrine_67x100.jpg);}
+.b033:before {background-image:url(../img/covers/033_GQ_Life_67x100.jpg);}
+.b035:before {background-image:url(../img/covers/034_GQ_Topical_67x100.jpg);}
+.b036:before {background-image:url(../img/covers/035_GQ_Misc_67x100.jpg);}
+
+
+.b095:before {background-image:url(../img/covers/095_LAE_67x100.jpg);}
+.b096:before {background-image:url(../img/covers/096_LAE_67x100.jpg);}
+.b097:before {background-image:url(../img/covers/097_LAE_67x100.jpg);}
+.b098:before {background-image:url(../img/covers/098_LAE_67x100.jpg);}
+
+.b040:before {background-image:url(../img/covers/040_VBV_Matt_67x100.jpg);}
+.b041:before {background-image:url(../img/covers/041_VBV_Mark_67x100.jpg);}
+.b042:before {background-image:url(../img/covers/042_VBV_Lukas_67x100.jpg);}
+.b043:before {background-image:url(../img/covers/043_VBV_John_67x100.jpg);}
+.b044:before {background-image:url(../img/covers/044_VBV_Roma_67x100.jpg);}
+.b045:before {background-image:url(../img/covers/045_VBV_1Cor_67x100.jpg);}
+.b046:before {background-image:url(../img/covers/046_VBV_Gala_67x100.jpg);}
+.b047:before {background-image:url(../img/covers/047_VBV_Thess_67x100.jpg);}
+.b048:before {background-image:url(../img/covers/048_VBV_Eph_67x100.jpg);}
+.b049:before {background-image:url(../img/covers/049_VBV_Phili_67x100.jpg);}
+.b050:before {background-image:url(../img/covers/050_VBV_Colo_67x100.jpg);}
+.b051:before {background-image:url(../img/covers/051_VBV_Phil_67x100.jpg);}
+.b052:before {background-image:url(../img/covers/052_VBV_1Tim_67x100.jpg);}
+.b053:before {background-image:url(../img/covers/053_VBV_Heb_67x100.jpg);}
+.b054:before {background-image:url(../img/covers/054_VBV_Jame_67x100.jpg);}
+.b055:before {background-image:url(../img/covers/055_VBV_Reva_67x100.jpg);}
+.b056:before {background-image:url(../img/covers/056_ROI_UnDiosUnMensaje_67x100.jpg);}
+.b057:before {background-image:url(../img/covers/057_ROI_UnDiosUnMensaje_67x100.jpg);}
+.b058:before {background-image:url(../img/covers/058_ROI_UnDiosUnMensaje_67x100.jpg);}
+.b059:before {background-image:url(../img/covers/059_GOC_HeLivedAmongUs_67x100.jpg);}
+.b060:before {background-image:url(../img/covers/060_MNM_67x100.jpg);}

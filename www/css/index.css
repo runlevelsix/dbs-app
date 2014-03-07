@@ -25,7 +25,8 @@
 /* smaller text for English text */
 .ui-collapsible-heading span,
 .ui-li-divider > h2 > span,
-.ui-listview li span {
+.ui-listview li span,
+h3 > span {
   font-size: smaller;
   font-weight: normal;
 }
