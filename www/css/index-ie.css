@@ -1,0 +1,7 @@
+.index-content									{position:absolute;right:40px;height:88%;background-color:#fff;overflow-y:scroll}
+.index-content > div > .index-tab				{overflow:hidden}
+.index-sidebar-tabs								{display:none}
+
+.index-header-tabs								{position:absolute;top:70px;right:0;left:40px}
+.index-header-tabs a							{background:#fff}
+.index-header-logo 								{top:0}
