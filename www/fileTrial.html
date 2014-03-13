@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+	<title>File Trial Testing</title>
+  
+  <link href="css/index-ltr.css" type="text/css" rel="stylesheet">
+  <!--[if lte IE 8]>
+      <link href="../_/css/index-ie.css" type="text/css" rel="stylesheet">
+  <![endif]-->
+  
+  <!-- Owl Carousel Stylings -->
+  <link href="css/vendor/owl/bootstrapTheme.css" rel="stylesheet">
+  <link href="css/vendor/owl/custom.css" rel="stylesheet">
+
+  <!-- Owl Carousel Assets -->
+  <link href="css/vendor/owl/owl.carousel.css" rel="stylesheet">
+  <link href="css/vendor/owl/owl.theme.css" rel="stylesheet">
+
+  <!-- Prettify -->
+  <link href="css/vendor/owl/prettify.css" rel="stylesheet">
+  
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  
+  <script src="js/vendor/jquery-1.11.0.min.js"></script>
+  <script src="js/vendor/owl/owl.carousel.min.js"></script>
+   
+  <script type="text/javascript" charset="utf-8">
+    
+  document.addEventListener("deviceready", onDeviceReady, false);
+
+  	function onDeviceReady() {
+    	 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccess, fail);
+    	 
+    	 $("#owl-demo").owlCarousel({
+         autoPlay: 3000,
+         items : 4,
+         itemsDesktop : [1199,3],
+         itemsDesktopSmall : [979,3],
+         itemsTablet : [768,2],
+         itemsTabletSmall : [600,1],
+         itemsMobile : [479,1]
+       });
+  		}
+  	
+    //Be careful! The onFSSuccess needs the parameter fileSystem!
+    //The directory path is without the prefix of the root directory!
+    function onFSSuccess(fileSystem) {    
+    	console.log("Logging the fileSystem name: " + fileSystem.name);
+    	console.log("Logging the file root name: " + fileSystem.root.name);
+      
+      var directoryEntry = fileSystem.root;
+      var fullPath = directoryEntry.fullPath
+      console.log("Full Path: "+fullPath);
+      
+      // get the directory we want
+      // Retrieve an existing directory
+      directoryEntry.getDirectory("/sdcard", {create: false, exclusive: false}, getDirSuccess, fail);
+      
+    }
+    
+    function readSuccess(entries) {
+    	console.log("Going to list entries -->   "+entries.length+ " <--");
+        var i;
+        for (i=0; i<entries.length; i++) {
+            console.log(entries[i].name);
+        }
+        console.log("Done listing entries");
+      }
+    
+    function getDirSuccess(entry) {
+    	
+    	// here is the path to DBS directory that has images in it.
+      console.log("Got the directory");
+      console.log(entry.toURL());
+      
+      // So can we list the images in a list like is needed for the carousel?
+      var content = "";
+  
+      content += "<div class=\"item\"><img src=\"cdvfile://localhost/persistent/DCIM/DBS2/01001-01.1.jpg\" alt=\"Genisis 1.1\"/></div>";
+      content += "<div class=\"item\"><img src=\"" +entry.toURL()+ "/DBS2/01001-01.2.jpg\" alt=\"Genisis 1.2\"/></div>";
+      content += "<div class=\"item\"><img src=\"" +entry.toURL()+ "/01001-01.3.jpg\" alt=\"Genisis 1.3\"/></div>";
+      content += "<div class=\"item\"><img src=\"" +entry.toURL()+ "/01001-01.4.jpg\" alt=\"Genisis 1.4\"/></div>";
+      content += "<div class=\"item\"><img src=\"" +entry.toURL()+ "/01001-02.1.jpg\" alt=\"Genisis 2.1\"/></div>";
+      content += "<div class=\"item\"><img src=\"" +entry.toURL()+ "/01001-01.1.jpg\" alt=\"Genisis 1.1\"/></div>";
+      content += "<div class=\"item\"><img src=\"" +entry.toURL()+ "/01003-01.1.jpg\" alt=\"Genisis 3.1\"/></div>";
+      console.log("Here is the div made up:");
+      console.log(content);
+      
+      document.getElementById("owl-demo").innerHTML = content;
+      //$("#owl-demo").html(content);
+      
+      console.log("Made an img div in the body");
+     
+      
+      // Get a directory reader
+      var directoryReader = entry.createReader();
+
+      // Get a list of all the entries in the directory
+      directoryReader.readEntries(readSuccess,fail);
+      }
+    
+    function fail(evt) {
+        console.log(evt.target.error.code);
+    }
+	
+	</script>
+
+</head>
+<body>
+	<h1>File Test</h1>
+
+<div class="container">
+        <div class="row">
+          <div class="span12">
+
+            <div id="owl-demo" class="owl-carousel"></div>
+
+          </div><!-- span12 -->
+        </div><!-- row -->
+</div><!--  container -->   
+
+</body>
+</html>
