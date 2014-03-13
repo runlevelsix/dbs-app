@@ -11,20 +11,22 @@
 	<link rel="stylesheet" href="css/vendor/jquery.mobile-1.4.0.min.css">
 	<link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" href="css/index-specific.css">
+	<script type="text/javascript" src="js/vendor/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="js/vendor/jquery.mobile-1.4.0.min.js"></script>
 </head>
 
 <body>
 
 <div data-role="page" id="BiblesandCommentaries">
-	<div data-role="header" data-add-back-btn="true" data-position="fixed" data-theme="a">
+	<div data-role="header" data-position="fixed" data-theme="a">
 		<h1>Biblioteca</h1>
 		<a href="index.html" class="ui-btn ui-btn-right ui-icon-home ui-btn-icon-notext">No text</a>
 		<div class="index-sidebar-tabs" data-role="navbar" data-grid="c">
 			<ul>
-				<li><a href="#BiblesandCommentaries" class="ui-btn-active">Biblias</a></li>
-				<li><a href="#EnquirersLibrary">Buscadores</a></li>
-				<li><a href="#FamilyLibrary">Familia</a></li>
-				<li><a href="#BibleTeachings">Enseñanzas</a></li>
+				<li><a href="books.html#BiblesandCommentaries" class="ui-btn-active">Biblias</a></li>
+				<li><a href="books.html#EnquirersLibrary">Buscadores</a></li>
+				<li><a href="books.html#FamilyLibrary">Familia</a></li>
+				<li><a href="books.html#BibleTeachings">Enseñanzas</a></li>
 			</ul>
 		</div> <!-- end header, needs to be repeated on each 'page' -->
 	</div>
@@ -94,18 +96,20 @@
 			</div>
 		</div>
 	</div>
+
+	<div data-role="footer">&nbsp;</div>
 </div> <!-- end of bibles 'page' (?) -->
 
 <div data-role="page" id="EnquirersLibrary">
-	<div data-role="header" data-add-back-btn="true" data-position="fixed" data-theme="a">
+	<div data-role="header" data-position="fixed" data-theme="a">
 		<h1>Biblioteca</h1>
 		<a href="index.html" class="ui-btn ui-btn-right ui-icon-home ui-btn-icon-notext">No text</a>
 		<div class="index-sidebar-tabs" data-role="navbar" data-grid="c">
 			<ul>
-				<li><a href="#BiblesandCommentaries">Biblias</a></li>
-				<li><a href="#EnquirersLibrary" class="ui-btn-active">Buscadores</a></li>
-				<li><a href="#FamilyLibrary">Familia</a></li>
-				<li><a href="#BibleTeachings">Enseñanzas</a></li>
+				<li><a href="books.html#BiblesandCommentaries">Biblias</a></li>
+				<li><a href="books.html#EnquirersLibrary" class="ui-btn-active">Buscadores</a></li>
+				<li><a href="books.html#FamilyLibrary">Familia</a></li>
+				<li><a href="books.html#BibleTeachings">Enseñanzas</a></li>
 			</ul>
 		</div> <!-- end header, needs to be repeated on each 'page' -->
 	</div>
@@ -114,7 +118,7 @@
 		<div class="index-tab" data-role="collapsible">
 			<h1>Biblioteca del Estudiante <span>Enquirers Library</span></h1>
 
-			<ul data-role="listview">
+			<ul data-role="listview" data-dbs-basepath="file:///sdcard/DBS/SPA - Spanish of Spain/">
 				<li data-role="list-divider"><h2>Películas <span>Films</span></h2></li>
 				<li><a class="v1000 item" href="Video/000_Movies/_/index.html#panel1-1"><p>La Película de Jesús</p><span>The Jesus Film</span></a></li>
 				<li><a class="v1004 item" href="Video/000_Movies/_/index.html#panel1-2"><p>Hombre de Dios</p><span>God Man</span></a></li>
@@ -160,95 +164,116 @@
 			</ul>
 		</div>
 	</div>
+
+	<div data-role="footer">&nbsp;</div>
+
 </div> <!-- end EnquirersLibrary -->
 
-<div id="FamilyLibrary" data-role="main" class="ui-content">
-	<div data-role="header" data-add-back-btn="true" data-position="fixed" data-theme="a">
+<div data-role="page" id="FamilyLibrary">
+	<div data-role="header" data-position="fixed" data-theme="a">
 		<h1>Biblioteca</h1>
 		<a href="index.html" class="ui-btn ui-btn-right ui-icon-home ui-btn-icon-notext">No text</a>
 		<div class="index-sidebar-tabs" data-role="navbar" data-grid="c">
 			<ul>
-				<li><a href="#BiblesandCommentaries">Biblias</a></li>
-				<li><a href="#EnquirersLibrary">Buscadores</a></li>
-				<li><a href="#FamilyLibrary" class="ui-btn-active">Familia</a></li>
-				<li><a href="#BibleTeachings">Enseñanzas</a></li>
+				<li><a href="books.html#BiblesandCommentaries">Biblias</a></li>
+				<li><a href="books.html#EnquirersLibrary">Buscadores</a></li>
+				<li><a href="books.html#FamilyLibrary" class="ui-btn-active">Familia</a></li>
+				<li><a href="books.html#BibleTeachings">Enseñanzas</a></li>
 			</ul>
 		</div> <!-- end header, needs to be repeated on each 'page' -->
 	</div>
 
-	<div class="index-tab" data-role="collapsible">
-		<h1>Biblioteca de la Famila</h1>
-		<h2>Family Library</h2>
+	<div data-role="main" class="ui-content">
+		<div class="index-tab" data-role="collapsible">
+			<h1>Biblioteca de la Famila</h1>
+			<h2>Family Library</h2>
 
-		<h3>Películas para Niños</h3>
-		<h4>Children's Films</h4>
-		<a class="v1002 item" href="Video/000_Movies/_/index.html#panel1-5"><p>La Historia de Jesús para niños</p><span>Story of Jesus for Children</span></a>
+			<h3>Películas para Niños</h3>
+			<h4>Children's Films</h4>
+			<a class="v1002 item" href="Video/000_Movies/_/index.html#panel1-5"><p>La Historia de Jesús para niños</p><span>Story of Jesus for Children</span></a>
 
-		<h3>Alfabetización y Evangelización</h3>
-		<h4>Literacy and Evangelism</h4>
-		<a class="b095 item" target="_blank" href="Books/095_LAE_Primers/095_LAE_Book1.pdf"><p>Nuevos Caminos: Lecciones - Primera Parte</p><span>Firm Foundations:Book 1</span></a>
-		<a class="b096 item" target="_blank" href="Books/095_LAE_Primers/096_LAE_Book2.pdf"><p>Nuevos Caminos: Lecciones - Segunda Parte</p><span>Firm Foundations: Book 2</span></a>
-		<a class="b097 item" target="_blank" href="Books/095_LAE_Primers/097_LAE_Puzzle.pdf"><p>Palabras Cruzadas-Nuevos Caminos Libros 1 y 2</p><span>Puzzles- Books 1 and 2</span></a>
-		<a class="b098 item" target="_blank" href="Books/095_LAE_Primers/098_LAE_Workbook.pdf"><p>Libro de Ejercício para Cartillas 1 y 2</p><span>Workbook: Book 1 and 2</span></a>
+			<h3>Alfabetización y Evangelización</h3>
+			<h4>Literacy and Evangelism</h4>
+			<a class="b095 item" target="_blank" href="Books/095_LAE_Primers/095_LAE_Book1.pdf"><p>Nuevos Caminos: Lecciones - Primera Parte</p><span>Firm Foundations:Book 1</span></a>
+			<a class="b096 item" target="_blank" href="Books/095_LAE_Primers/096_LAE_Book2.pdf"><p>Nuevos Caminos: Lecciones - Segunda Parte</p><span>Firm Foundations: Book 2</span></a>
+			<a class="b097 item" target="_blank" href="Books/095_LAE_Primers/097_LAE_Puzzle.pdf"><p>Palabras Cruzadas-Nuevos Caminos Libros 1 y 2</p><span>Puzzles- Books 1 and 2</span></a>
+			<a class="b098 item" target="_blank" href="Books/095_LAE_Primers/098_LAE_Workbook.pdf"><p>Libro de Ejercício para Cartillas 1 y 2</p><span>Workbook: Book 1 and 2</span></a>
 
-		<h3>Grupos Pequeños Saludables</h3>
-		<h4>Healthy Small Groups</h4>
-		<a class="b060 item" target="_blank" href="Books/060_MNM/060_MNM_IntroduccionGruposPequenosSaludables.pdf"><p>Introducción Grupos Pequenos Saludables</p><span>Small Group Introduction</span></a>
-		<a class="b060 item" target="_blank" href="Books/060_MNM/061_MNM_Cap1BasesBiblicasyTeologicasdeGruposPequenos.pdf"><p>Cap 1: Bases Bíblicas y Teológicas de Grupos Pequeños</p><span>Theological Bases small group Biblicasy</span></a>
-		<a class="b060 item" target="_blank" href="Books/060_MNM/062_MNM_Cap2BaseHistoricayPracticas.pdf"><p>Cap 2: Base Histórica y Practicas</p><span>Historical basis and Practices</span></a>
-		<a class="b060 item" target="_blank" href="Books/060_MNM/063_MNM_Cap3Queesungrupopequenosaludable.pdf"><p>Cap 3: ¿Qué es un grupo pequeño saludable?</p><span>That is a healthy small group</span></a>
-		<a class="b060 item" target="_blank" href="Books/060_MNM/064_MNM_Cap4Cincopropositospoderosos.pdf"><p>Cap 4: Cinco Propósitos Poderosos</p><span>Five powerful purposes</span></a>
-		<a class="b060 item" target="_blank" href="Books/060_MNM/065_MNM_Cap5CompanerismoyAdoracion.pdf"><p>Cap 5: Compañerismo y Adoración</p><span>Fellowship and worship</span></a>
-		<a class="b060 item" target="_blank" href="Books/060_MNM/066_MNM_Cap6ComodesarrollarunministeriodeGruposPequenos.pdf"><p>Cap 6: Como Desarrollar un Ministerio de Grupos Pequeños</p><span>How to develop a small group ministry</span></a>
-		<a class="b060 item" target="_blank" href="Books/060_MNM/067_MNM_Cap7LiderazgoSaludable.pdf"><p>Cap 7: Liderazgo Saludable</p><span>Healthy leadership</span></a>
-		<a class="b060 item" target="_blank" href="Books/060_MNM/068_MNM_Cap8MetodoInductivo.pdf"><p>Cap 8: Método Inductivo</p><span>Inductive method</span></a>
-		<a class="b060 item" target="_blank" href="Books/060_MNM/067_MNM_Cap7LiderazgoSaludable.pdf"><p>Cap 7: Liderazgo Saludable</p><span>Healthy leadership</span></a>
-		<a class="b060 item" target="_blank" href="Books/060_MNM/068_MNM_Cap8MetodoInductivo.pdf"><p>Cap 7: Liderazgo Saludable</p><span>Healthy leadership</span></a>
-		<a class="b060 item" target="_blank" href="Books/060_MNM/069_MNM_BibliografíayReferencias.pdf"><p>Bibliografía Referencias</p><span>Bibliography References</span></a>
-		<a class="b060 item" target="_blank" href="Books/060_MNM/070_MNM_ContenidoGruposPequenosSaludablesVD.pdf"><p>Contenido Grupos Pequenos Saludables VD</p><span>Healthy Small Groups Content</span></a>
-		<a class="b060 item" target="_blank" href="Books/060_MNM/072_MNM_Mentoreo_Entrenador.pdf"><p>Mentoreo Entrenador</p><span>Mentoring Coach</span></a>
-		<a class="b060 item" target="_blank" href="Books/060_MNM/073_MNM_Mentoreo_Participante.pdf"><p>Mentoreo Participante</p><span>Mentoring Participant</span></a>
+			<h3>Grupos Pequeños Saludables</h3>
+			<h4>Healthy Small Groups</h4>
+			<a class="b060 item" target="_blank" href="Books/060_MNM/060_MNM_IntroduccionGruposPequenosSaludables.pdf"><p>Introducción Grupos Pequenos Saludables</p><span>Small Group Introduction</span></a>
+			<a class="b060 item" target="_blank" href="Books/060_MNM/061_MNM_Cap1BasesBiblicasyTeologicasdeGruposPequenos.pdf"><p>Cap 1: Bases Bíblicas y Teológicas de Grupos Pequeños</p><span>Theological Bases small group Biblicasy</span></a>
+			<a class="b060 item" target="_blank" href="Books/060_MNM/062_MNM_Cap2BaseHistoricayPracticas.pdf"><p>Cap 2: Base Histórica y Practicas</p><span>Historical basis and Practices</span></a>
+			<a class="b060 item" target="_blank" href="Books/060_MNM/063_MNM_Cap3Queesungrupopequenosaludable.pdf"><p>Cap 3: ¿Qué es un grupo pequeño saludable?</p><span>That is a healthy small group</span></a>
+			<a class="b060 item" target="_blank" href="Books/060_MNM/064_MNM_Cap4Cincopropositospoderosos.pdf"><p>Cap 4: Cinco Propósitos Poderosos</p><span>Five powerful purposes</span></a>
+			<a class="b060 item" target="_blank" href="Books/060_MNM/065_MNM_Cap5CompanerismoyAdoracion.pdf"><p>Cap 5: Compañerismo y Adoración</p><span>Fellowship and worship</span></a>
+			<a class="b060 item" target="_blank" href="Books/060_MNM/066_MNM_Cap6ComodesarrollarunministeriodeGruposPequenos.pdf"><p>Cap 6: Como Desarrollar un Ministerio de Grupos Pequeños</p><span>How to develop a small group ministry</span></a>
+			<a class="b060 item" target="_blank" href="Books/060_MNM/067_MNM_Cap7LiderazgoSaludable.pdf"><p>Cap 7: Liderazgo Saludable</p><span>Healthy leadership</span></a>
+			<a class="b060 item" target="_blank" href="Books/060_MNM/068_MNM_Cap8MetodoInductivo.pdf"><p>Cap 8: Método Inductivo</p><span>Inductive method</span></a>
+			<a class="b060 item" target="_blank" href="Books/060_MNM/067_MNM_Cap7LiderazgoSaludable.pdf"><p>Cap 7: Liderazgo Saludable</p><span>Healthy leadership</span></a>
+			<a class="b060 item" target="_blank" href="Books/060_MNM/068_MNM_Cap8MetodoInductivo.pdf"><p>Cap 7: Liderazgo Saludable</p><span>Healthy leadership</span></a>
+			<a class="b060 item" target="_blank" href="Books/060_MNM/069_MNM_BibliografíayReferencias.pdf"><p>Bibliografía Referencias</p><span>Bibliography References</span></a>
+			<a class="b060 item" target="_blank" href="Books/060_MNM/070_MNM_ContenidoGruposPequenosSaludablesVD.pdf"><p>Contenido Grupos Pequenos Saludables VD</p><span>Healthy Small Groups Content</span></a>
+			<a class="b060 item" target="_blank" href="Books/060_MNM/072_MNM_Mentoreo_Entrenador.pdf"><p>Mentoreo Entrenador</p><span>Mentoring Coach</span></a>
+			<a class="b060 item" target="_blank" href="Books/060_MNM/073_MNM_Mentoreo_Participante.pdf"><p>Mentoreo Participante</p><span>Mentoring Participant</span></a>
 
-		<h3>Él Vivió Entre Nosotros</h3>
-		<h4>He Lived Among Us</h4>
-		<a class="b059 item" target="_blank" href="Books/056_ROI/059_GOC_HeLivedAmongUs.pdf"><p>Él Vivió Entre Nosotros</p><span>He Lived Among Us</span></a>
-	</div>
-</div>
-
-	<div id="BibleTeachings" data-role="main" class="ui-content">
-	<div class="index-tab" data-role="collapsible">
-		<h1>Enseñanzas de la Biblia</h1>
-		<h2>Bible Teachings</h2>
-
-		<h3>Comentario Bíblico</h3>
-		<h4>Bible Commentary</h4>
-		<a class="b040 item" target="_blank" href="Books/040_VBV/40_SPA_VBV_mat.pdf"><p>Mateo: El Primer Manual Cristiano</p><span>Matthew: The First Christian Guide</span></a>
-		<a class="b041 item" target="_blank" href="Books/040_VBV/41_SPA_VBV_mark.pdf"><p>Introducción a Marcos</p><span>Introduction to Mark</span></a>
-		<a class="b042 item" target="_blank" href="Books/040_VBV/42_SPA_VBV_luke.pdf"><p>Introducción a Lucas</p><span>Introduction to Luke</span></a>
-		<a class="b043 item" target="_blank" href="Books/040_VBV/43_SPA_VBV_joh.pdf"><p>Evangelio de Juan y 1-3 Juan</p><span>John and 1-3 John</span></a>
-		<a class="b044 item" target="_blank" href="Books/040_VBV/44_SPA_VBV_rom.pdf"><p>Introducción a Romanos</p><span>Introduction to Romans</span></a>
-		<a class="b045 item" target="_blank" href="Books/040_VBV/45_SPA_VBV_1co.pdf"><p>Introducción a 1 Corintios</p><span>Introduction to 1 Corintians</span></a>
-		<a class="b046 item" target="_blank" href="Books/040_VBV/46_SPA_VBV_gal.pdf"><p>Introducción a Gálatas</p><span>Introduction to Galatians</span></a>
-		<a class="b047 item" target="_blank" href="Books/040_VBV/47_SPA_VBV_1_2_Thessalonians.pdf"><p>1 Tesalonicenses y 2 Tesalonicenses</p><span>I and II Thessalonians</span></a>
-		<a class="b048 item" target="_blank" href="Books/040_VBV/48_SPA_VBV_ephesians.pdf"><p>Introducción a Efesios</p><span>Introduction to Ephesians</span></a>
-		<a class="b049 item" target="_blank" href="Books/040_VBV/49_SPA_VBV_philippians.pdf"><p>Introducción a Filipenses</p><span>Introduction to Philippians</span></a>
-		<a class="b050 item" target="_blank" href="Books/040_VBV/50_SPA_VBV_col.pdf"><p>Introducción a Colosenses</p><span>Introduction to Colossians</span></a>
-		<a class="b051 item" target="_blank" href="Books/040_VBV/51_SPA_VBV_philemon.pdf"><p>Introducción a Filemón</p><span>Introduction to Philemon</span></a>
-		<a class="b052 item" target="_blank" href="Books/040_VBV/52_SPA_VBV_tim_tit.pdf"><p>Introducción a las Cartas Pastorales: 1 y 2 Timoteo y Tito</p><span>Introduction to Pastoral Letters: I-II Timothy and Titus</span></a>
-		<a class="b053 item" target="_blank" href="Books/040_VBV/53_SPA_VBV_heb.pdf"><p>Introducción a Hebreos</p><span>Introduction to Hebrews</span></a>
-		<a class="b054 item" target="_blank" href="Books/040_VBV/54_SPA_VBV_jam.pdf"><p>Introducción a Santiago y Judas</p><span>Introduction to James and Jude</span></a>
-		<a class="b055 item" target="_blank" href="Books/040_VBV/55_SPA_VBV_rev.pdf"><p>Introducción a Apocalipsis</p><span>Introduction to Revelation</span></a>
-
-		<h3>Un Dios Un Mensaje</h3>
-		<h4>One God One Message</h4>
-		<a class="b056 item" target="_blank" href="Books/056_ROI/056_ROI_UnDiosUnMensaje.pdf"><p>Un Dios Un Mensaje</p><span>One God One Message</span></a>
-		<a class="b057 item" target="_blank" href="Books/056_ROI/057_ROI_UnDiosUnMensajeAbout.pdf"><p>Sobre Un Dios Un Mensaje</p><span>About One God One Message</span></a>
-		<a class="b058 item" target="_blank" href="Books/056_ROI/058_ROI_UnDiosUnMensajeDiscusión.pdf"><p>Un Dios Un Mensaje - Discusión</p><span>OGOM-Discussion Guide</span></a>
-	</div>
+			<h3>Él Vivió Entre Nosotros</h3>
+			<h4>He Lived Among Us</h4>
+			<a class="b059 item" target="_blank" href="Books/056_ROI/059_GOC_HeLivedAmongUs.pdf"><p>Él Vivió Entre Nosotros</p><span>He Lived Among Us</span></a>
+		</div>
 	</div>
 
 	<div data-role="footer">&nbsp;</div>
-</div> <!-- end of library page -->
+</div> <!-- end of FamilyLibrary  -->
+
+<div data-role="page" id="BibleTeachings">
+	<div data-role="header" data-position="fixed" data-theme="a">
+		<h1>Biblioteca</h1>
+		<a href="index.html" class="ui-btn ui-btn-right ui-icon-home ui-btn-icon-notext">No text</a>
+		<div class="index-sidebar-tabs" data-role="navbar" data-grid="c">
+			<ul>
+				<li><a href="books.html#BiblesandCommentaries">Biblias</a></li>
+				<li><a href="books.html#EnquirersLibrary">Buscadores</a></li>
+				<li><a href="books.html#FamilyLibrary">Familia</a></li>
+				<li><a href="books.html#BibleTeachings" class="ui-btn-active">Enseñanzas</a></li>
+			</ul>
+		</div> <!-- end header, needs to be repeated on each 'page' -->
+	</div>
+
+	<div data-role="main" class="ui-content">
+		<div class="index-tab" data-role="collapsible">
+			<h1>Enseñanzas de la Biblia</h1>
+			<h2>Bible Teachings</h2>
+
+			<h3>Comentario Bíblico</h3>
+			<h4>Bible Commentary</h4>
+			<a class="b040 item" target="_blank" href="Books/040_VBV/40_SPA_VBV_mat.pdf"><p>Mateo: El Primer Manual Cristiano</p><span>Matthew: The First Christian Guide</span></a>
+			<a class="b041 item" target="_blank" href="Books/040_VBV/41_SPA_VBV_mark.pdf"><p>Introducción a Marcos</p><span>Introduction to Mark</span></a>
+			<a class="b042 item" target="_blank" href="Books/040_VBV/42_SPA_VBV_luke.pdf"><p>Introducción a Lucas</p><span>Introduction to Luke</span></a>
+			<a class="b043 item" target="_blank" href="Books/040_VBV/43_SPA_VBV_joh.pdf"><p>Evangelio de Juan y 1-3 Juan</p><span>John and 1-3 John</span></a>
+			<a class="b044 item" target="_blank" href="Books/040_VBV/44_SPA_VBV_rom.pdf"><p>Introducción a Romanos</p><span>Introduction to Romans</span></a>
+			<a class="b045 item" target="_blank" href="Books/040_VBV/45_SPA_VBV_1co.pdf"><p>Introducción a 1 Corintios</p><span>Introduction to 1 Corintians</span></a>
+			<a class="b046 item" target="_blank" href="Books/040_VBV/46_SPA_VBV_gal.pdf"><p>Introducción a Gálatas</p><span>Introduction to Galatians</span></a>
+			<a class="b047 item" target="_blank" href="Books/040_VBV/47_SPA_VBV_1_2_Thessalonians.pdf"><p>1 Tesalonicenses y 2 Tesalonicenses</p><span>I and II Thessalonians</span></a>
+			<a class="b048 item" target="_blank" href="Books/040_VBV/48_SPA_VBV_ephesians.pdf"><p>Introducción a Efesios</p><span>Introduction to Ephesians</span></a>
+			<a class="b049 item" target="_blank" href="Books/040_VBV/49_SPA_VBV_philippians.pdf"><p>Introducción a Filipenses</p><span>Introduction to Philippians</span></a>
+			<a class="b050 item" target="_blank" href="Books/040_VBV/50_SPA_VBV_col.pdf"><p>Introducción a Colosenses</p><span>Introduction to Colossians</span></a>
+			<a class="b051 item" target="_blank" href="Books/040_VBV/51_SPA_VBV_philemon.pdf"><p>Introducción a Filemón</p><span>Introduction to Philemon</span></a>
+			<a class="b052 item" target="_blank" href="Books/040_VBV/52_SPA_VBV_tim_tit.pdf"><p>Introducción a las Cartas Pastorales: 1 y 2 Timoteo y Tito</p><span>Introduction to Pastoral Letters: I-II Timothy and Titus</span></a>
+			<a class="b053 item" target="_blank" href="Books/040_VBV/53_SPA_VBV_heb.pdf"><p>Introducción a Hebreos</p><span>Introduction to Hebrews</span></a>
+			<a class="b054 item" target="_blank" href="Books/040_VBV/54_SPA_VBV_jam.pdf"><p>Introducción a Santiago y Judas</p><span>Introduction to James and Jude</span></a>
+			<a class="b055 item" target="_blank" href="Books/040_VBV/55_SPA_VBV_rev.pdf"><p>Introducción a Apocalipsis</p><span>Introduction to Revelation</span></a>
+
+			<h3>Un Dios Un Mensaje</h3>
+			<h4>One God One Message</h4>
+			<a class="b056 item" target="_blank" href="Books/056_ROI/056_ROI_UnDiosUnMensaje.pdf"><p>Un Dios Un Mensaje</p><span>One God One Message</span></a>
+			<a class="b057 item" target="_blank" href="Books/056_ROI/057_ROI_UnDiosUnMensajeAbout.pdf"><p>Sobre Un Dios Un Mensaje</p><span>About One God One Message</span></a>
+			<a class="b058 item" target="_blank" href="Books/056_ROI/058_ROI_UnDiosUnMensajeDiscusión.pdf"><p>Un Dios Un Mensaje - Discusión</p><span>OGOM-Discussion Guide</span></a>
+		</div>
+	</div>
+
+	<div data-role="footer">&nbsp;</div>
+</div> <!-- end of BibleTeachings page -->
 
 
 	<script type="text/javascript">
@@ -256,28 +281,31 @@
 		 	document.write('\x3Cscript type="text/javascript" src="cordova.js">\x3C/script>');
 	 	}
 	</script>
-	<script type="text/javascript" src="js/vendor/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript" src="js/vendor/jquery.mobile-1.4.0.min.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
   <script type="text/javascript">
-		app.initialize();
-		// $("[data-role='header']").toolbar();
+		// app.initialize();
 		;(function () {
+			document.addEventListener('deviceready', onDeviceReady, false);
 			/* Convert all links to their relative paths
 			 * Uses nearest unordered list <ul> with a data-dbs-basepath attribute
 			 * The value of the attribute is the file:/// path on the microSD card
 			 */
-			if (navigator.userAgent.toLowerCase().match('chrome')) {
-				$("a").each(function() {
-					$(this).attr("href", "../content/" + $(this).attr("href"));
-					$(this).attr("target", "_blank");
-				});
-			} else {
-				$("a").each(function() {
-					$(this).attr("href",$(this).closest("ul[data-dbs-basepath]").data("dbs-basepath") + $(this).attr("href"));
-					$(this).attr("target", "_blank");
-				});
-			}
+			function onDeviceReady () {
+				if (navigator.userAgent.toLowerCase().match('chrome')) {
+					$(".ui-content a").each(function() {
+						$(this).attr("href", "../content/" + $(this).attr("href"));
+						$(this).attr("target", "_blank");
+					});
+				} else {
+					$(".ui-content a").each(function() {
+						var basepath = $(this).attr("href",$(this).closest("ul[data-dbs-basepath]").data("dbs-basepath"));
+						if (basepath !== 'undefined') {
+							$(this).attr("href",$(this).attr("href",$(this).closest("ul[data-dbs-basepath]").data("dbs-basepath") + $(this).attr("href"));
+							$(this).attr("target", "_blank");
+						}
+					});
+				}
+			} // end onDeviceReady
 
 		}());
   </script>

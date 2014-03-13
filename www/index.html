@@ -10,6 +10,8 @@
 	<!--[if IE 7]><link href="_/css/index-ie7.css" type="text/css" rel="stylesheet"><![endif]-->
 	<link rel="stylesheet" href="css/vendor/jquery.mobile-1.4.0.min.css">
 	<link rel="stylesheet" href="css/index.css">
+	<script type="text/javascript" src="js/vendor/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="js/vendor/jquery.mobile-1.4.0.min.js"></script>
 </head>
 
 <body>
@@ -280,11 +282,33 @@
 		 	document.write('\x3Cscript type="text/javascript" src="cordova.js">\x3C/script>');
 	 	}
 	</script>
-	<script type="text/javascript" src="js/vendor/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript" src="js/vendor/jquery.mobile-1.4.0.min.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
   <script type="text/javascript">
-		app.initialize();
+		// app.initialize();
+		;(function () {
+			document.addEventListener('deviceready', onDeviceReady, false);
+			/* Convert all links to their relative paths
+			 * Uses nearest unordered list <ul> with a data-dbs-basepath attribute
+			 * The value of the attribute is the file:/// path on the microSD card
+			 */
+			function onDeviceReady () {
+				if (navigator.userAgent.toLowerCase().match('chrome')) {
+					$(".ui-content a").each(function() {
+						$(this).attr("href", "../content/" + $(this).attr("href"));
+						$(this).attr("target", "_blank");
+					});
+				} else {
+					$(".ui-content a").each(function() {
+						var basepath = $(this).attr("href",$(this).closest("ul[data-dbs-basepath]").data("dbs-basepath"));
+						if (basepath !== 'undefined') {
+							$(this).attr("href",$(this).attr("href",$(this).closest("ul[data-dbs-basepath]").data("dbs-basepath") + $(this).attr("href"));
+							$(this).attr("target", "_blank");
+						}
+					});
+				}
+			} // end onDeviceReady
+
+		}());
   </script>
 </body>
 </html>
