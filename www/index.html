@@ -22,7 +22,7 @@
 	</div>
 	<div data-role="main" class="ui-content">
 		<ul data-role="listview">
-			<li><a class="index-icon-books" href="books.html">Biblioteca</a></li>
+			<li><a class="index-icon-books" href="books.html" data-ajax="false">Biblioteca</a></li>
 			<li><a class="index-icon-video" href="#video">Videoteca</a></li>
 			<li><a class="index-icon-audio" href="#audio">Audio</a></li>
 			<!--<a class="index-icon-music" href="#music">Música</a>-->
@@ -287,25 +287,30 @@
 		// app.initialize();
 		;(function () {
 			document.addEventListener('deviceready', onDeviceReady, false);
+			document.addEventListener('ready', onDeviceReady, false);
 			/* Convert all links to their relative paths
 			 * Uses nearest unordered list <ul> with a data-dbs-basepath attribute
 			 * The value of the attribute is the file:/// path on the microSD card
 			 */
 			function onDeviceReady () {
-				if (navigator.userAgent.toLowerCase().match('chrome')) {
+				/*if (navigator.userAgent.toLowerCase().match('chrome')) {
 					$(".ui-content a").each(function() {
 						$(this).attr("href", "../content/" + $(this).attr("href"));
 						$(this).attr("target", "_blank");
 					});
-				} else {
-					$(".ui-content a").each(function() {
-						var basepath = $(this).attr("href",$(this).closest("ul[data-dbs-basepath]").data("dbs-basepath"));
-						if (basepath !== 'undefined') {
-							$(this).attr("href",$(this).attr("href",$(this).closest("ul[data-dbs-basepath]").data("dbs-basepath") + $(this).attr("href"));
-							$(this).attr("target", "_blank");
-						}
+				} else {*/
+					$("ul[data-dbs-basepath]").each(
+					/*$(".ui-content a").each(*/function() {
+						var basepath = $(this).data("dbs-basepath");
+						$(this).find("a").each(function() {
+							if (basepath !== 'undefined') {
+								$(this).attr("href", $(this).attr("href", basepath + $(this).attr("href")));
+								$(this).attr("target", "_blank");
+								$(this).attr("rel", "external");
+							}
+						});
 					});
-				}
+				/*}*/
 			} // end onDeviceReady
 
 		}());

@@ -4,10 +4,12 @@
 .item:before		{content:"";background-size:100% 100%;position:relative;display:block;float:left;width:33px;height:50px;margin-right:5px}
 a[class^=v]:before	{content:"";background-size:100% 100%;position:relative;display:block;float:left;width:80px;height:60px;margin-right:5px}
 
-/* changed paths to ../img from ../images */
-.b001:before {background-image:url(../img/covers/001_easytoread_67x100.jpg)}
-.b002:before {background-image:url(../img/covers/002_DiosHabaHoy_67x100.jpg)}
-.b003:before {background-image:url(../img/covers/003_LaBibliaDeLasAmericas_67x100.jpg)}
+/* changed paths to ../img from ../images
+    or, changed to sdcard path
+ */
+.b001:before {background-image:url(file:///sdcard/DBS/SPA - Spanish of Spain/_/images/covers/001_easytoread_67x100.jpg)}
+.b002:before {background-image:url(file:///sdcard/DBS/SPA - Spanish of Spain/_/images/covers/002_DiosHabaHoy_67x100.jpg)}
+.b003:before {background-image:url(file:///sdcard/DBS/SPA - Spanish of Spain/_/images/covers/003_LaBibliaDeLasAmericas_67x100.jpg)}
 .b004:before {background-image:url(../img/covers/004_NuevaBiblia_67x100.jpg)}
 .b005:before {background-image:url(../img/covers/005_SantaBiblia_67x100.jpg)}
 .b006:before {background-image:url(../img/covers/006_ReinaValeraAntique_67x100.jpg)}

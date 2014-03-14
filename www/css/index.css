@@ -23,6 +23,7 @@
 }
 
 /* smaller text for English text */
+.item a > p,
 .ui-collapsible-heading span,
 .ui-li-divider > h2 > span,
 .ui-listview li span,
