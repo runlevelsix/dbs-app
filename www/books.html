@@ -37,8 +37,8 @@
 			<ul data-role="listview"
 					data-inset="true"
 					data-split-icon="action"
-					data-split-theme="a"
-					data-dbs-basepath="file:///sdcard/DBS/SPA - Spanish of Spain/">
+					data-split-theme="a">
+					<!-- data-dbs-basepath="file:///sdcard/DBS/SPA - Spanish of Spain/" -->
 				<li data-role="list-divider"><h4>Biblias en Español <span>Spanish Bibles</span></h4></li>
 
 				<li class="b002 item">
@@ -130,10 +130,10 @@
 		<div class="index-tab" data-role="collapsible">
 			<h1>Biblioteca del Estudiante <span>Enquirers Library</span></h1>
 
-			<ul data-role="listview" data-dbs-basepath="file:///sdcard/DBS/SPA - Spanish of Spain/">
+			<ul data-role="listview">  <!-- data-dbs-basepath="file:///sdcard/DBS/SPA - Spanish of Spain/" -->
 				<li data-role="list-divider"><h2>Películas <span>Films</span></h2></li>
-				<li><a class="v1000 item" href="Video/000_Movies/_/index.html#panel1-1"><p>La Película de Jesús</p><span>The Jesus Film</span></a></li>
-				<li><a class="v1004 item" href="Video/000_Movies/_/index.html#panel1-2"><p>Hombre de Dios</p><span>God Man</span></a></li>
+				<li><a class="v1000 item mp4" href="/sdcard/DBS/SPA - Spanish of Spain/Video/000_Movies/001_SPA_Jesus_Film.mp4"><p>La Película de Jesús</p><span>The Jesus Film</span></a></li>
+				<li><a class="v1004 item mp4" href="/sdcard/DBS/SPA - Spanish of Spain/Video/000_Movies/002_SPA_GodMan.mp4"><p>Hombre de Dios</p><span>God Man</span></a></li>
 				<li><a class="v1003 item" href="Video/000_Movies/_/index.html#panel1-3"><p>La Esperanza</p><span>The Hope Video</span></a></li>
 				<li><a class="v1002 item" href="Video/000_Movies/_/index.html#panel1-4"><p>Magdalena: de la Vergüenza a la Libertad</p><span>Magdalena</span></a></li>
 
@@ -259,8 +259,8 @@
 			<ul data-role="listview"
 					data-inset="true"
 					data-split-icon="action"
-					data-split-theme="a"
-					data-dbs-basepath="file:///sdcard/DBS/SPA - Spanish of Spain/">
+					data-split-theme="a">
+					<!-- data-dbs-basepath="file:///sdcard/DBS/SPA - Spanish of Spain/" -->
 				<li data-role="list-divider"><h4>Comentario Bíblico <span>Bible Commentary</span></h4></li>
 				<li><a class="b040 item pdf" target="_blank" href="/sdcard/DBS/SPA - Spanish of Spain/Books/040_VBV/40_SPA_VBV_mat.pdf"><p>Mateo: El Primer Manual Cristiano</p><span>Matthew: The First Christian Guide</span></a></li>
 				<li><a class="b041 item pdf " target="_blank" href="/sdcard/DBS/SPA - Spanish of Spain/Books/040_VBV/41_SPA_VBV_mark.pdf"><p>Introducción a Marcos</p><span>Introduction to Mark</span></a></li>
@@ -332,16 +332,34 @@
 						event.preventDefault();
 						cordova.plugins.fileOpener.open(
 						  $(this).attr("href")
-						  // '/sdcard/DBS/SPA - Spanish of Spain/Books/040_VBV/40_SPA_VBV_mat.pdf'
 						  ,'application/pdf'
+						 /* ,{
+						  	error: function errorOpenPDF(errorObj) {
+						  		alert('Error status: ' + errorObj.status + ' - Error message: ' + errorObj.message);
+						  	},
+						  	success: function openPDF() {
+						  		alert('file opened successfully');
+						  	}
+						  }*/
+	          );
+          });
+				});
+
+				/* Launch MP4 files */
+				$("a.mp4").each(function (){
+					$(this).on("click", function(event) {
+						event.preventDefault();
+						cordova.plugins.fileOpener.open(
+						  $(this).attr("href")
+						  ,'video/mp4'
 						  /*,{
 						  	error: function errorOpenPDF(errorObj) {
 						  		alert('Error status: ' + errorObj.status + ' - Error message: ' + errorObj.message);
 						  	},
 						  	success: function openPDF() {
 						  		alert('file opened successfully');
-						  	}*/
-						  }
+						  	}
+						  }*/
 	          );
           });
 				});
