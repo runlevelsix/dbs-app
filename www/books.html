@@ -326,7 +326,9 @@
 					});
 				/*}*/
 
-				/* Launch PDF files */
+				/* Launch PDF files
+					 Uses: https://github.com/pwlin/cordova-plugin-file-opener
+				*/
 				$("a.pdf").each(function (){
 					$(this).on("click", function(event) {
 						event.preventDefault();
@@ -345,7 +347,9 @@
           });
 				});
 
-				/* Launch MP4 files */
+				/* Launch MP4 files
+					 Uses: https://github.com/pwlin/cordova-plugin-file-opener
+				*/
 				$("a.mp4").each(function (){
 					$(this).on("click", function(event) {
 						event.preventDefault();
